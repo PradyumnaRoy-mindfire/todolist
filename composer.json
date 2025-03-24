@@ -1,0 +1,19 @@
+{
+    "name": "pradyumnaroy/mvc",
+    "autoload": {
+        "psr-4": {
+            "app\\controllers\\": "app/controllers/",
+            "app\\models\\": "app/models/",
+            "app\\core\\": "app/core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PradyumnaRoy-mindfire",
+            "email": "pradyumnar@mindfiresolutions.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

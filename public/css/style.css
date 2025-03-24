@@ -1,0 +1,16 @@
+.todo-container {
+    margin: auto;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.error-text {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+.task-title {
+    flex: 1;
+    word-break: break-word;
+}

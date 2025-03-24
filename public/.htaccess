@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# redirecting to index file if we want direct accessing
+RewriteRule ^(.*)$ index.php [QSA,L]
