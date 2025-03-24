@@ -1,4 +1,4 @@
-<li class="list-group-item d-flex justify-content-between align-items-center" data-id="' . $taskId . '">
+<li class="list-group-item d-flex justify-content-between align-items-center bg-success" data-id="<?= $taskId ?>">
     <input type="checkbox" class="taskCheckbox form-check-input h2">
     <span class="task-title ms-3"> <?= htmlspecialchars($taskTitle)?></span>
     <div>

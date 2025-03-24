@@ -2,9 +2,9 @@
     "name": "pradyumnaroy/mvc",
     "autoload": {
         "psr-4": {
-            "app\\controllers\\": "app/controllers/",
-            "app\\models\\": "app/models/",
-            "app\\core\\": "app/core/"
+            "App\\Controllers\\": "app/controllers/",
+            "App\\Models\\": "app/models/",
+            "App\\Core\\": "app/core/"
         }
     },
     "authors": [

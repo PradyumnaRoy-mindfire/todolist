@@ -1,6 +1,6 @@
 <?php 
-namespace app\controllers;
-use app\core\BaseController;
+namespace App\Controllers;
+use App\Core\BaseController;
 
 class AllTasksController extends BaseController{
 

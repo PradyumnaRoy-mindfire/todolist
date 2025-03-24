@@ -23,9 +23,16 @@ $(document).ready(function () {
             success: function (response) {
                 if (isEditing) {
                     $(`li[data-id='${taskId}'] .task-title`).text(taskTitle);
+                    $(`li[data-id='${taskId}'] .task-title`).addClass('text-success fw-bold');
+                    setTimeout(function(){
+                        $(`li[data-id='${taskId}'] .task-title`).removeClass('text-success fw-bold');
+                    },3000);
                     isEditing = false;
                 } else {
                     $("#taskList").append(response); 
+                    setTimeout(function () {
+                        $("#taskList li:last").removeClass("bg-success");
+                    }, 1000);
                 }
                 $("#taskInput").val(""); 
                 $("#taskId").val(""); 
@@ -45,24 +52,34 @@ $(document).ready(function () {
         isEditing = true;
     });
 
-    // Delete Task
+    
+    
+            // delete a task
+    let deleteTaskId = null;
     $(document).on("click", ".deleteBtn", function () {
-        let li = $(this).closest("li");
-        let id = li.data("id");
+        deleteTaskId = $(this).closest("li").data("id");
+        $("#deleteConfirmModal").modal("show");
+    });
 
-        $.ajax({
-            url: "/deleteTask",
-            type: "POST",
-            data: { 
-                action: "delete",
-                id: id 
-            },
-            success: function () {
-                li.fadeOut(300, function () {
-                    $(this).remove();
-                });
-            }
-        });
+    // Confirm Delete
+    $("#confirmDelete").click(function () {
+        if (deleteTaskId) {
+            $.ajax({
+                url: "/deleteTask",
+                type: "POST",
+                data: { 
+                    action: "delete",
+                    id: deleteTaskId 
+                },
+                success: function () {
+                    $(`li[data-id='${deleteTaskId}']`).fadeOut(300, function () { $(this).remove(); });
+                    $("#deleteConfirmModal").modal("hide");
+                },
+                error: function () {
+                    alert("Failed to delete task.");
+                }
+            });
+        }
     });
 
     // Complete Task

@@ -1,8 +1,6 @@
 <?php 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__.'/../routes.php';
-require_once __DIR__ . '/../db/config.php';
-
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];
@@ -19,10 +17,10 @@ if ($matchedRoute) {
     $controller = $matchedRoute['controller'];
     $function = $matchedRoute['function'];
 
-    $controllerName = "app\\controllers\\".$controller;
+    $controllerName = "App\\Controllers\\".$controller;
 
     if (class_exists($controllerName)) {
-        $call = new $controllerName($conn);
+        $call = new $controllerName();
         
         if (method_exists($call, $function)) {
             $call->$function();

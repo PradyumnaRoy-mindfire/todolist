@@ -1,24 +1,18 @@
 <?php 
-namespace app\models;
+namespace App\Models;
 
-use app\core\Logger;
-use PDO; //as thjis is global namespace
+use App\Core\Logger;
+use App\Models\BaseModel;
 use PDOException;
 
-class Task {
-    private $conn;
+class Task extends BaseModel{
     private $tableName = 'tasks';
 
-    public function __construct($conn)
-    {
-        $this->conn = $conn;
-    }
-        //fetch all tasks
     public function getAllTasks() {
         try{
             $sql = "SELECT * FROM $this->tableName";
             $stmt = $this->conn->query($sql);
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll();
             return $result;
         } catch(PDOException $e ) {
             Logger::logError("Exception during getting all tasks ",$e->getMessage());

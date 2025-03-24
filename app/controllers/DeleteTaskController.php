@@ -1,7 +1,7 @@
 <?php 
-namespace app\controllers;
-use app\core\BaseController;
-use app\core\Logger;
+namespace App\Controllers;
+use App\Core\BaseController;
+use App\Core\Logger;
 use Exception;
 
 class DeleteTaskController extends BaseController {
