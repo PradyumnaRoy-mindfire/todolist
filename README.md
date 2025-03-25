@@ -45,7 +45,7 @@ It is a simple todolist project made by following MVC architechture.
 ## Code Description
  * Used MVC pattern that followed in the industry.
  * Created individual controllers for each features ,individual model for each table
- * Has a separate for routes .
+ * Has a separate file for routes .
  * Implemented autoloader using composer .
  * Used class,object,inheritance and namespace concept and used PDO for database connection.
  * Utilized ajax in js , working all features without page reload.
@@ -55,14 +55,10 @@ It is a simple todolist project made by following MVC architechture.
  * Used environmental variables.
 
 ## Tech Stack
-
 **Client:** HTML, Bootstrap, CSS, JS
-
 **Server:** PHP
-
 **Database:** MySQL
 
 
-## Authors
-
+## Author
 - [Pradyumna Roy](https://github.com/PradyumnaRoy-mindfire/todolist)
