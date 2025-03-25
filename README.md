@@ -56,7 +56,9 @@ It is a simple todolist project made by following MVC architechture.
 
 ## Tech Stack
 **Client:** HTML, Bootstrap, CSS, JS
+
 **Server:** PHP
+
 **Database:** MySQL
 
 
